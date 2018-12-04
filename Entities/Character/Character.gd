@@ -1,6 +1,6 @@
 extends Node2D
 
-const WALK_SPEED = 50
+const WALK_SPEED = 250
 const FLOOR_NORMAL = Vector2(0, 1)
 const SLOPE_SLIDE_STOP = 25.0
 const STOP_FACTOR = 25
@@ -12,7 +12,8 @@ var prevAnim = ""
 func _ready():
 	add_to_group(Constants.G_CHARACTER)
 
-func move(_delta : float, direction : Vector2):
+func move(_delta : float, direction : Vector2, looking_at : Vector2):
+	$body.look_at(looking_at)
 	linear_vel = direction*WALK_SPEED
 	#linear_vel.x = lerp(linear_vel.x, target_vel.x + externalImpulse.x, 0.1)
 	#linear_vel.y = lerp(linear_vel.y, target_vel.y + externalImpulse.y, 0.1)

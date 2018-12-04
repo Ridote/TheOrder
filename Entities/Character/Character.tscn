@@ -35,10 +35,12 @@ collision/safe_margin = 0.08
 motion/sync_to_physics = false
 
 [node name="Sprite" type="Sprite" parent="body"]
+rotation = 1.5708
 texture = ExtResource( 2 )
 hframes = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="body"]
+rotation = 1.5708
 build_mode = 0
 polygon = PoolVector2Array( -19, -3, -15, 3, 15, 3, 19, -3, 7, -10, -7, -10 )
 
